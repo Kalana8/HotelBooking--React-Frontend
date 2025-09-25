@@ -4,6 +4,11 @@ Modern, responsive hotel booking frontend showcasing rooms, details pages, and a
 
 ---
 
+## Watch Preview
+https://drive.google.com/file/d/1Zd2awM9BhunCIeu0czHL4mDEBddxFNim/view?usp=drive_link
+
+
+
 ### Tech Stack
 
 - React 18, Vite
