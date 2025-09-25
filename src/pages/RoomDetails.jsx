@@ -1,3 +1,4 @@
+// Room details page: left content (description, facilities) + right reservation panel
 import { AdultsDropdown, CheckIn, CheckOut, KidsDropdown, ScrollToTop } from '../components';
 import { useRoomContext } from '../context/RoomContext';
 import { hotelRules } from '../constants/data';
@@ -7,9 +8,10 @@ import { FaCheck } from 'react-icons/fa';
 
 const RoomDetails = () => {
 
-  const { id } = useParams(); // id get form url (/room/:id) as string...
+  const { id } = useParams(); // id from URL (/room/:id)
   const { rooms } = useRoomContext();
 
+  // Find room by id (string -> number)
   const room = rooms.find(room => room.id === +id);
 
   // for (const key in room) {
@@ -23,6 +25,7 @@ const RoomDetails = () => {
 
       <ScrollToTop />
 
+      {/* Banner */}
       <div className='bg-room h-[560px] relative flex justify-center items-center bg-cover bg-center'>
         <div className='absolute w-full h-full bg-black/70' />
         <h1 className='text-6xl text-white z-20 font-primary text-center'>{name} Details</h1>
@@ -32,7 +35,7 @@ const RoomDetails = () => {
       <div className='container mx-auto'>
         <div className='flex flex-col lg:flex-row lg:gap-x-8 h-full py-24'>
 
-          {/* ⬅️⬅️⬅️ left side ⬅️⬅️⬅️ */}
+          {/* Left column: description, image, facilities */}
           <div className='w-full lg:w-[60%] h-full text-justify'>
 
             <h2 className='h2'>{name}</h2>
@@ -43,7 +46,7 @@ const RoomDetails = () => {
               <h3 className='h3 mb-3'></h3>
               <p className='mb-12'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis accusantium sapiente quas quos explicabo, odit nostrum? Reiciendis illum dolor eos dicta. Illum vero at hic nostrum sint et quod porro. </p>
 
-              {/* icons grid */}
+              {/* Facilities icons grid */}
               <div className="grid grid-cols-3 gap-6 mb-12">
                 {
                   facilities.map((item, index) =>
@@ -59,7 +62,7 @@ const RoomDetails = () => {
           </div>
 
 
-          {/* ➡️➡️➡️ right side ➡️➡️➡️ */}
+          {/* Right column: reservation form and hotel rules */}
           <div className='w-full lg:w-[40%] h-full'>
 
             {/* reservation */}

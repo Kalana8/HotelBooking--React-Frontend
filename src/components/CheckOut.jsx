@@ -1,3 +1,4 @@
+// Check-out date picker
 import { BsCalendar } from 'react-icons/bs';
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';

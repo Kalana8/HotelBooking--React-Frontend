@@ -1,3 +1,4 @@
+// Adults selector using Headless UI Menu
 import { useRoomContext } from '../context/RoomContext';
 import { BsChevronDown } from 'react-icons/bs';
 import { adultsList } from '../constants/data';
@@ -13,12 +14,14 @@ const AdultsDropdown = () => {
     <Menu as='div' className='w-full h-full bg-white relative'>
 
 
+      {/* Current selection + chevron */}
       <Menu.Button className='w-full h-full flex items-center justify-between px-8'>
         {adults}
         <BsChevronDown className='text-base text-accent-hover' />
       </Menu.Button>
 
 
+      {/* Options list */}
       <Menu.Items as='ul' className='bg-white absolute w-full flex flex-col z-40'>
         {
           adultsList.map(({ name }, idx) =>

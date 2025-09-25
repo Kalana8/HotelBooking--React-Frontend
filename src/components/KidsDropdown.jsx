@@ -1,3 +1,4 @@
+// Kids selector using Headless UI Menu
 import { useRoomContext } from '../context/RoomContext';
 import { BsChevronDown } from 'react-icons/bs';
 import { kidsList } from '../constants/data';
@@ -13,12 +14,14 @@ const KidsDropdown = () => {
     <Menu as='div' className='w-full h-full bg-white relative'>
 
 
+      {/* Current selection + chevron */}
       <Menu.Button className='w-full h-full flex items-center justify-between px-8'>
         {kids === '0 Kid' ? 'No Kid' : kids}
         <BsChevronDown className='text-base text-accent-hover' />
       </Menu.Button>
 
 
+      {/* Options list */}
       <Menu.Items as='ul' className='bg-white absolute w-full flex flex-col z-40'>
         {
           kidsList.map(({ name }, idx) =>

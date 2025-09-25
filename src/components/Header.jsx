@@ -1,8 +1,9 @@
+// Sticky header with logo and navigation links
 import { useRoomContext } from '../context/RoomContext';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LogoWhite } from '../assets'; // SVG Logo
-import { LogoDark } from '../assets'; // SVG Logo
+import { LogoWhite } from '../assets'; // SVG Logo (light)
+import { LogoDark } from '../assets'; // SVG Logo (dark)
 
 
 const Header = () => {
@@ -11,6 +12,7 @@ const Header = () => {
 
   const [header, setHeader] = useState(false);
 
+  // Toggle compact header after scrolling
   useEffect(() => {
     window.addEventListener('scroll', () =>
       window.scrollY > 50
@@ -19,7 +21,13 @@ const Header = () => {
     );
   });
 
-  const navLinks = ['Home', 'Rooms', 'Restaurant', 'Spa', 'Contact'];
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Rooms', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'Contact', path: '/contact' }
+  ];
 
   return (
     <header
@@ -29,7 +37,7 @@ const Header = () => {
 
       <div className='container mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-y-6 lg:gap-y-0'>
 
-        {/* Logo */}
+        {/* Logo switches between light/dark based on header background */}
         <Link to="/" onClick={resetRoomFilterData}>
           {
             header
@@ -38,13 +46,13 @@ const Header = () => {
           }
         </Link>
 
-        {/* Nav */}
+        {/* Navigation links */}
         <nav className={`${header ? 'text-primary' : 'text-white'}
         flex gap-x-4 lg:gap-x-8 font-tertiary tracking-[3px] text-[15px] items-center uppercase`}>
           {
             navLinks.map(link =>
-              <Link to="/" className='transition hover:text-accent' key={link}>
-                {link}
+              <Link to={link.path} className='transition hover:text-accent' key={link.name}>
+                {link.name}
               </Link>
             )
           }

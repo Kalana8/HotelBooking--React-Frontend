@@ -1,3 +1,4 @@
+// Rooms grid: shows spinner while filtering and renders all visible rooms
 import { useRoomContext } from '../context/RoomContext';
 import { SpinnerDotted } from 'spinners-react';
 import { Room } from '.';
@@ -5,13 +6,14 @@ import { Room } from '.';
 
 const Rooms = () => {
 
+  // Global room list and loading indicator from context
   const { rooms, loading } = useRoomContext();
 
   return (
     <section className='py-24'>
 
       {
-        // overlay & spinner effect 
+        // Full-screen overlay spinner while filtering
         loading &&
         <div className='h-screen w-full fixed bottom-0 top-0 bg-black/80 z-50 grid place-items-center'>
           <SpinnerDotted />
@@ -28,6 +30,7 @@ const Rooms = () => {
 
         <div className='grid grid-cols-1 max-w-sm mx-auto gap-[30px] lg:grid-cols-3 lg:max-w-none lg:mx-0'>
           {
+            // Render each room card
             rooms.map(room =>
               <Room key={room.id} room={room} />
             )

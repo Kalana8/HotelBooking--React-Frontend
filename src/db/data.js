@@ -170,4 +170,26 @@ export const roomData = [
     image: images.Room8Img,
     imageLg: images.Room8ImgLg,
   },
+
+  {
+    id: 9,
+    name: 'Deluxe Room',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit.Ea placeat eos sed voluptas unde veniam eligendi a. Quaerat molestiae hic omnis temporibus quos consequuntur nam voluptatum ea accusamus, corrupti nostrum eum placeat quibusdam quis beatae quae labore earum architecto aliquid debitis.',
+    facilities: [
+      { name: 'Wifi', icon: FaWifi },
+      { name: 'Coffee', icon: FaCoffee },
+      { name: 'Bath', icon: FaBath },
+      { name: 'Parking Space', icon: FaParking },
+      { name: 'Swimming Pool', icon: FaSwimmingPool },
+      { name: 'Breakfast', icon: FaHotdog },
+      { name: 'GYM', icon: FaStopwatch },
+      { name: 'Drinks', icon: FaCocktail },
+    ],
+    size: 48,
+    maxPerson: 8,
+    price: 499,
+    image: images.Room8Img,
+    imageLg: images.Room8ImgLg,
+  },
 ];

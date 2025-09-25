@@ -1,3 +1,4 @@
+// Room card with image, meta, and CTA linking to details
 import { BsArrowsFullscreen, BsPeople } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +9,7 @@ const Room = ({ room }) => {
   return (
     <div className='bg-white shadow-2xl min-h-[500px] group'>
 
+      {/* Cover image with hover zoom */}
       <div className='overflow-hidden'>
         <img src={image} alt="img" className='group-hover:scale-110 transition-all duration-300 w-full' />
       </div>
@@ -42,7 +44,7 @@ const Room = ({ room }) => {
       </div>
 
 
-      {/* name and description */}
+      {/* Name and description */}
       <div className='text-center'>
         <Link to={`/room/${id}`}>
           <h3 className="h3">{name}</h3>
@@ -52,7 +54,7 @@ const Room = ({ room }) => {
       </div>
 
 
-      {/* button */}
+      {/* CTA button to room details */}
       <Link
         to={`/room/${id}`}
         className="btn btn-secondary btn-sm max-w-[240px] mx-auto duration-300"
