@@ -3,8 +3,10 @@
 Modern, responsive hotel booking frontend showcasing rooms, details pages, and a booking form. Built with React, Vite, TailwindCSS, and common UI libraries.
 
 ---
+## Live Demo
+https://heroic-llama-239a4b.netlify.app/
 
-## Watch Preview
+## Watch Preview Video 
 https://drive.google.com/file/d/1Zd2awM9BhunCIeu0czHL4mDEBddxFNim/view?usp=drive_link
 
 
